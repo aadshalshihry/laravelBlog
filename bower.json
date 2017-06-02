@@ -1,0 +1,24 @@
+{
+  "name": "laravel_api",
+  "description": "Using bower to implement Susy",
+  "main": "",
+  "authors": [
+    "Roman Alshehri <aalshehri08@hotmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Sudy"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "^2.2.12"
+  }
+}
