@@ -180,6 +180,8 @@ return [
         // Dingo Provider
         Dingo\Api\Provider\LaravelServiceProvider::class,
 
+        EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class,
+
     ],
 
     /*

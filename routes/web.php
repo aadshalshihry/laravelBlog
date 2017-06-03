@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('about', function () {
   return view('pages.about');
 });
+
+Route::resource('users', 'UserController');

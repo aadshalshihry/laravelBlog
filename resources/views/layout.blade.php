@@ -20,8 +20,8 @@
     </head>
     <body>
         <div class="page">
-          @include('includes.nav')
-          @include('includes.side_bar')
+          @include('partials.nav')
+          @include('partials.side_bar')
           @yield('content')
 
         </div>

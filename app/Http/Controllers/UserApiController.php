@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use EllipseSynergie\ApiResponse\Contracts\Response;
 use App\User;
 
-class UserController extends Controller
+class UserApiController extends Controller
 {
+
+    protected $respose;
+
+    public function __construct(Response $response)
+    {
+        // $this->response = $response;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +23,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view("users.index", compact('users'));
+      $users = User::all();
+      return $this->response->array($users->toArray());
     }
 
     /**
@@ -47,8 +56,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        return $this->response->array($user->toArray());
+        //
     }
 
     /**

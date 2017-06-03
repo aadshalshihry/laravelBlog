@@ -11,5 +11,41 @@
 // Susy
 @import "bower_components/susy/sass/susy";
 
-.container { @include container(80%); }
+.container { @include container(90%); }
 .cl1 { @include span(40%); }
+
+.user_card {
+  @include span(28%);
+  border: 1px gray solid;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+nav {
+  #logo{
+
+  }
+
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      border: 1px gray solid;
+      padding: .5em 1em;
+      margin: .5em 1em;
+      border-radius: 0.5em;
+      a {
+        color: $text-color;
+        text-decoration-style: none;
+
+        font-size: 2em;
+      }
+
+      a:hover {
+        text-decoration: none;
+        color: $text-color;
+      }
+    }
+  }
+}

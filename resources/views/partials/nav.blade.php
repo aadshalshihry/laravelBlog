@@ -1,5 +1,5 @@
 <nav>
-  <h2>Laravel</h2>
+  <h2 id="logo">Laravel</h2>
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
