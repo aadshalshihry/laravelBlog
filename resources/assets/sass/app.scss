@@ -22,6 +22,25 @@
   padding: 1em;
 }
 
+.post_card {
+  @include span(100%);
+  border: 1px gray solid;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.post_body {
+  font-size: 1.5em;
+}
+
+.sub_title {
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
 nav {
   #logo{
 

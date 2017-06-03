@@ -7698,6 +7698,27 @@ button.close {
   padding: 1em;
 }
 
+.post_card {
+  width: 100%;
+  float: left;
+  margin-right: 5.2631578947%;
+  border: 1px gray solid;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.post_body {
+  font-size: 1.5em;
+}
+
+.sub_title {
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
 nav ul {
   list-style: none;
 }

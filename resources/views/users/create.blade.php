@@ -4,7 +4,6 @@
 
 @section('content')
   <div class="content">
-    <p>Users</p>
     <hr>
       <div class="container">
         <h3>Register... </h3>

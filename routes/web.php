@@ -20,5 +20,9 @@ Route::get('about', function () {
   return view('pages.about');
 });
 
+Route::get('api_route', function(){
+	return view('pages.api_route');
+});
+
 Route::resource('users', 'UserController');
 Route::resource('posts', 'PostController');
