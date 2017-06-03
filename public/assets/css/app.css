@@ -7689,7 +7689,7 @@ button.close {
 }
 
 .user_card {
-  width: 28%;
+  width: 44%;
   float: left;
   margin-right: 5.2631578947%;
   border: 1px gray solid;
@@ -7714,12 +7714,39 @@ nav ul li a {
   color: #636b6f;
   -webkit-text-decoration-style: none;
   text-decoration-style: none;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 nav ul li a:hover {
   text-decoration: none;
   color: #636b6f;
+}
+
+form {
+  border: 1px gray solid;
+  border-radius: 1em;
+  margin: 1em auto;
+}
+
+form .form_control {
+  margin: 1em;
+}
+
+form .form_control label {
+  display: block;
+}
+
+form .form_control .input_size {
+  width: 30em;
+  padding: 0.2em 1em;
+}
+
+form .form_control .submit_size {
+  width: 10em;
+}
+
+.errors {
+  color: red;
 }
 
 /*# sourceMappingURL=app.css.map */

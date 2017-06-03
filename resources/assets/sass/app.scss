@@ -15,7 +15,7 @@
 .cl1 { @include span(40%); }
 
 .user_card {
-  @include span(28%);
+  @include span(44%);
   border: 1px gray solid;
   border-radius: 0.5em;
   margin-bottom: 1em;
@@ -39,7 +39,7 @@ nav {
         color: $text-color;
         text-decoration-style: none;
 
-        font-size: 2em;
+        font-size: 1em;
       }
 
       a:hover {
@@ -48,4 +48,31 @@ nav {
       }
     }
   }
+}
+
+form {
+  border: 1px gray solid;
+  border-radius: 1em;
+  margin: 1em auto;
+  .form_control {
+    margin: 1em;
+
+    label {
+      display: block;
+    }
+
+    .input_size {
+      width: 30em;
+      padding: 0.2em 1em;
+    }
+    
+    .submit_size {
+      width: 10em;
+    }
+  }
+}
+
+.errors {
+  color: red;
+  
 }

@@ -4,6 +4,7 @@
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/users">Users</a></li>
+    <li><a href="{{ route('users.create') }}">Register</a></li>
     <li><a href="/api/route">Api Routes</a></li>
   </ul>
 </nav>

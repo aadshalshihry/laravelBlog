@@ -177,9 +177,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Html helper
+        Collective\Html\HtmlServiceProvider::class,
+
         // Dingo Provider
         Dingo\Api\Provider\LaravelServiceProvider::class,
 
+        // For the Api
         EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class,
 
     ],
@@ -230,6 +234,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
