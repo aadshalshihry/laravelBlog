@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    $names = ['Roman', 'Dhoom', 'Abdul'];
-    return view('pages.home', compact('names'));
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('about', function () {
   return view('pages.about');
-});
+})->name('about');
 
 Route::get('api_route', function(){
 	return view('pages.api_route');
@@ -26,3 +23,7 @@ Route::get('api_route', function(){
 
 Route::resource('users', 'UserController');
 Route::resource('posts', 'PostController');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

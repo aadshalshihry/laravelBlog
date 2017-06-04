@@ -7743,26 +7743,35 @@ nav ul li a:hover {
   color: #636b6f;
 }
 
-form {
+.logout_form {
+  display: inline-block;
+}
+
+.logout_form input {
+  background: #f5f8fa;
+  border: none;
+}
+
+.form {
   border: 1px gray solid;
   border-radius: 1em;
   margin: 1em auto;
 }
 
-form .form_control {
+.form .form_control {
   margin: 1em;
 }
 
-form .form_control label {
+.form .form_control label {
   display: block;
 }
 
-form .form_control .input_size {
+.form .form_control .input_size {
   width: 30em;
   padding: 0.2em 1em;
 }
 
-form .form_control .submit_size {
+.form .form_control .submit_size {
   width: 10em;
 }
 

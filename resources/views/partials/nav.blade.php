@@ -4,8 +4,17 @@
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/users">Users</a></li>
-    <li><a href="/posts">Posts</a></li>
-    <li><a href="{{ route('users.create') }}">Register</a></li>
-    <li><a href="/api_route">Api Routes</a></li>
+    @if(Auth::check())
+      <li><a href="/posts">Posts</a></li>
+    	{{ Form::open(['route' => 'logout', 'method' => 'post', 'class' => 'logout_form']) }}
+    		<li>{{ Form::submit('Logout') }}</li>
+    	{{ Form::close() }}
+
+
+    @else
+			<li><a href="{{ route('register') }}">Register</a></li>
+    	<li><a href="{{ route('login') }}">Login</a></li>
+    @endif
+    
   </ul>
 </nav>

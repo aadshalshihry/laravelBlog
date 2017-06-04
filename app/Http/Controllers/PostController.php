@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -13,8 +14,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $posts = Post::all();
+    {   
+        $user = Auth::user();
+        $posts = Post::all()->where('user_id', '=', $user->id);
         return view("posts.index", compact('posts'));
     }
 
@@ -36,6 +38,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
         $this->validate($request, [
             'title' => 'required|max:255',
             'body' => 'required||max:255'
@@ -45,6 +48,7 @@ class PostController extends Controller
         $post = new Post;
         $post->title = strtolower($request->title);
         $post->body = strtolower($request->body);
+        $post->user_id = $user->id;
 
         if($post->save()){
             return redirect()->route("posts.show", $post->id);

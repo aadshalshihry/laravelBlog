@@ -1,3 +1,15 @@
+@if(is_object(Auth::user()))
+  @if(Auth::user()->id != $user->id)
+    <script type="text/javascript">
+      window.location = "{{ route('users.index') }}";
+    </script>
+  @endif
+@else 
+  <script type="text/javascript">
+    window.location = "{{ route('users.index') }}";
+  </script>
+@endif
+
 @extends('layout')
 
 @section('title', '| User')

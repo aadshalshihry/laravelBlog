@@ -11,8 +11,10 @@
             <p>Name: {{ $user->name }}</p>
             <p>Email: {{ $user->email }}</p>
             <p>Username: {{ $user->username }}</p>
-            <a href="{{ route("users.show", $user->id) }}" class="redirect_btn"><button>Show</button></a>
-            <a href="{{ route("users.edit", $user->id) }}" class="redirect_btn"><button>Edit</button></a>
+            @if(Auth::user() && Auth::user()->id == $user->id)
+              <a href="{{ route("users.show", $user->id) }}" class="redirect_btn"><button>Show</button></a>
+              <a href="{{ route("users.edit", $user->id) }}" class="redirect_btn"><button>Edit</button></a>
+            @endif
           </div>
         @endforeach
       </div>

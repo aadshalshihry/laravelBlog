@@ -5,11 +5,13 @@
 // Variables
 @import "variables";
 
+// Susy
+@import "bower_components/susy/sass/susy";
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-// Susy
-@import "bower_components/susy/sass/susy";
+
 
 .container { @include container(90%); }
 .cl1 { @include span(40%); }
@@ -69,7 +71,15 @@ nav {
   }
 }
 
-form {
+.logout_form {
+  display: inline-block;
+  input {
+    background: $body-bg;
+    border: none;
+  }
+}
+
+.form {
   border: 1px gray solid;
   border-radius: 1em;
   margin: 1em auto;

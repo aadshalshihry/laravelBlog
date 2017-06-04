@@ -15,7 +15,7 @@
         </div>
         
 
-        {{ Form::open(['route' => 'posts.store']) }}
+        {{ Form::open(['route' => 'posts.store', 'class' => 'form']) }}
           <div class="form_control">
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title', null, 
