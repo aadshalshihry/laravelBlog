@@ -22,7 +22,7 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 
   // Get list of users
-  $api->get('users', 'App\Http\Controllers\UserApiController@index');
+  $api->get('users', 'UserApiController@index');
 
   // post user
   $api->post('users', 'App\Http\Controllers\UserApiController@stroe');

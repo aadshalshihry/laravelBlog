@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
 Route::get('about', function () {
   return view('pages.about');
@@ -26,4 +27,9 @@ Route::resource('posts', 'PostController');
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')->group(function(){
+	Route::get('/login', 'Auth\AdminsLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login/submit', 'Auth\AdminsLoginController@login')->name('admin.login.submit');
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+
+});
