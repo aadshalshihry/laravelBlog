@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +25,14 @@ Route::get('api_route', function(){
 Route::resource('users', 'UserController');
 Route::resource('posts', 'PostController');
 
+
 Auth::routes();
+
+Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('users.logout');
 
 Route::prefix('admin')->group(function(){
 	Route::get('/login', 'Auth\AdminsLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login/submit', 'Auth\AdminsLoginController@login')->name('admin.login.submit');
+	Route::get('/logout', 'Auth\AdminsLoginController@logout')->name('admin.logout');
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
-
 });
