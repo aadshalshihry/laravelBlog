@@ -4,11 +4,16 @@
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/users">Users</a></li>
-    @if(Auth::check())
+    @if(Auth::guard('web')->check())
       <li><a href="/posts">Posts</a></li>
-    	{{ Form::open(['route' => 'logout', 'method' => 'post', 'class' => 'logout_form']) }}
+      <li><a href="/user/logout">Logout</a></li>
+
+    	{{-- {{ Form::open(['route' => 'logout', 'method' => 'post', 'class' => 'logout_form']) }}
     		<li>{{ Form::submit('Logout') }}</li>
-    	{{ Form::close() }}
+    	{{ Form::close() }} --}}
+      @component('components.logedInNav')
+
+      @endcomponent
 
 
     @else

@@ -44,6 +44,7 @@
 }
 
 nav {
+  width: 90%;
   #logo{
 
   }
@@ -104,4 +105,76 @@ nav {
 .errors {
   color: red;
   
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: $body-bg;
+    color: $text-color;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    margin-left: 0.5em;    
+}
+
+.img_dropdown {
+  margin-left: 0.4em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -2em;
+    top: 1.8em;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 20px;
+
+    a {
+      color: $text-color;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      
+    }
+
+    a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown-group {
+      border-bottom: 1px gray solid;
+    }
+
+    .dropdown-lebal {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    // background-color: #3e8e41;
+}
+
+#dropdownId {
+  float: right;
+  border-radius: 0.1em;
+  width: 9em;
+  align: center;
+
 }

@@ -24,7 +24,7 @@
 
           <div class="form_control">
             {{ Form::label('body', 'Body:') }}
-            {{ Form::text('body', null, 
+            {{ Form::textarea('body', null, 
             array('placeholder' => 'Enter your body','class' => 'input_size')) }}
           </div>
 
