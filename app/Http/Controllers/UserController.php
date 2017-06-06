@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
+use Hash;
+use Auth;
+
 
 class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['create', 'store']]);
     }
     
     /**
@@ -53,13 +56,14 @@ class UserController extends Controller
         $user->name = strtolower($request->name);
         $user->email = strtolower($request->email);
         $user->username = strtolower($request->username);
-        $user->password = bcrypt($request->password);
+        $user->password = hash::make($request->password);
 
-        if($user->save()){
-            return redirect()->route("users.show", $user->id);
-        } else {
-            return redirect()->route("users.create");
-        }
+        $user->save();
+        Auth::guard('web')->login($user);
+
+        return redirect()->route("users.show", $user->id);
+
+        
     }
 
     /**
@@ -96,14 +100,14 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        $countExistedEmail = DB::table('users')->where('email', '<>', $request->email);
-        return $countExistedEmail;
+        // $countExistedEmail = DB::table('users')->where('email', '<>', $request->email);
+        // return $countExistedEmail;
 
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email,id'.$id,
+            'email' => 'unique:users,email,' . $id . '|required|email',
             'username' => 'required|max:255',
-            'old_password' => 'required',
+            'old_password' => 'required|old_password:' . Auth::user()->password,
             'password' => 'required|confirmed'
         ]);
         
@@ -114,7 +118,7 @@ class UserController extends Controller
             $user->name = strtolower($request->name);
             $user->email = strtolower($request->email);
             $user->username = strtolower($request->username);
-            $user->password = bcrypt($request->password);
+            $user->password = Hash::make($request->password);
 
             if($user->update()){
                 return redirect()->route("users.show", $user->id);
@@ -132,8 +136,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+
+        User::find($id)->delete();
+        Auth::logout();
+        return redirect()->route("home");
     }
 }

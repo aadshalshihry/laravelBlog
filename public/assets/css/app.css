@@ -7698,6 +7698,14 @@ button.close {
   padding: 1em;
 }
 
+.user_card button {
+  color: #636b6f;
+}
+
+.user_card .delete_user {
+  display: inline-block;
+}
+
 .post_card {
   width: 100%;
   float: left;

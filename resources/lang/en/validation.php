@@ -103,6 +103,7 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        
     ],
 
     /*
@@ -116,6 +117,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        
+    ],
+    'old_password' => "Old password is not right"
 
 ];

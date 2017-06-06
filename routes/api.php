@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserApiController;
 use Illuminate\Http\Request;
 
 /*
@@ -13,31 +14,36 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
 
   // Get list of users
-  $api->get('users', 'UserApiController@index');
+  // Route::resource('users', 'Api\UserApiController@index');
+  $api->get('users', 'App\Api\UserApiController@index');
+
+  $api->get('users-test', function(){
+    return true;
+  });
 
   // post user
-  $api->post('users', 'App\Http\Controllers\UserApiController@stroe');
+  // $api->post('users', 'App\Http\Controllers\Api\UserApiController@stroe');
 
   // Get specific user
-  $api->get('users/{id}', 'App\Http\Controllers\UserApiController@show');
+  // $api->get('users/{id}', 'App\Http\Controllers\Api\UserApiController@show');
 
   // update specific user
-  $api->put('users/{id}', 'App\Http\Controllers\UserApiController@update');
+  // $api->put('users/{id}', 'App\Http\Controllers\Api\UserApiController@update');
 
   // delete specific user
-  $api->delete('users/{id}', 'App\Http\Controllers\UserApiController@destroy');
+  // $api->delete('users/{id}', 'App\Http\Controllers\Api\UserApiController@destroy');
 
   // Get list of posts
-  $api->get('posts', 'App\Http\Controllers\PostApiController@index');
+  // $api->get('posts', 'App\Http\Controllers\PostApiController@index');
 
 });
 

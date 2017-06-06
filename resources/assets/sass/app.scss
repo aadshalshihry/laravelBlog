@@ -22,6 +22,14 @@
   border-radius: 0.5em;
   margin-bottom: 1em;
   padding: 1em;
+
+  button {
+    color: $text-color;
+  }
+
+  .delete_user {
+    display: inline-block;
+  }
 }
 
 .post_card {
@@ -178,3 +186,5 @@ nav {
   align: center;
 
 }
+
+
