@@ -24,7 +24,8 @@
             <p>Username: {{ $user->username }}</p>
             <a href="{{ url()->previous() }}" class="redirect_btn"><button>Back</button></a>
             <a href="{{ route("users.edit", $user->id) }}" class="redirect_btn"><button>Edit</button></a>
-            
+            @component('components.deleteBtn', ['route_name' => 'users.destroy' ,'user_id' => $user->id])
+            @endcomponent
           </div>
       </div>
   </div>

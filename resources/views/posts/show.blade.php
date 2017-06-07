@@ -17,6 +17,8 @@
 
             @if(Auth::user() && Auth::user()->id == $post->user_id)
               <a href="{{ route("posts.edit", $post->id) }}" class="redirect_btn"><button>Edit</button></a>
+              @component('components.deleteBtn', ['route_name' => 'posts.destroy' ,'user_id' => $post->id])
+              @endcomponent
             @endif
           </div>
       </div>

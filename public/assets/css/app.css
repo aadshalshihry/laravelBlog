@@ -7688,6 +7688,10 @@ button.close {
   margin-right: 5.2631578947%;
 }
 
+button {
+  color: #636b6f;
+}
+
 .user_card {
   width: 44%;
   float: left;
@@ -7696,14 +7700,6 @@ button.close {
   border-radius: 0.5em;
   margin-bottom: 1em;
   padding: 1em;
-}
-
-.user_card button {
-  color: #636b6f;
-}
-
-.user_card .delete_user {
-  display: inline-block;
 }
 
 .post_card {
@@ -7853,6 +7849,10 @@ nav ul li a:hover {
   border-radius: 0.1em;
   width: 9em;
   align: center;
+}
+
+.delete_user {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=app.css.map */

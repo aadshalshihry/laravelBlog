@@ -20,6 +20,8 @@
             
             <a href="{{ route("posts.show", $post->id) }}" class="redirect_btn"><button>Show</button></a>
             <a href="{{ route("posts.edit", $post->id) }}" class="redirect_btn"><button>Edit</button></a>
+            @component('components.deleteBtn', ['route_name' => 'posts.destroy' ,'user_id' => $post->id])
+            @endcomponent
           </div>
         @endforeach
       </div>

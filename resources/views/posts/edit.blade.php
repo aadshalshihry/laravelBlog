@@ -15,51 +15,26 @@
         </div>
         
 
-        {{ Form::open(['route' => 'users.store', 'class' => 'form']) }}
+          {{ Form::open(['route' => ['posts.update', $post->id ], 'class' => 'form']) }}
+            {{ method_field('PATCH') }}
+
           <div class="form_control">
-            {{ Form::label('name', 'Name:') }}
-            {{ Form::text('name', $user->name, 
-            array('placeholder' => 'Enter your name', 'class' => 'input_size')) }}
+            {{ Form::label('title', 'Title:') }}
+            {{ Form::text('title', $post->title, 
+            array('placeholder' => 'Enter your title','class' => 'input_size')) }}
           </div>
 
           <div class="form_control">
-            {{ Form::label('email', 'Email:') }}
-            {{ Form::text('email', $user->email, 
-            array('placeholder' => 'Enter your email','class' => 'input_size')) }}
+            {{ Form::label('body', 'Body:') }}
+            {{ Form::textarea('body', $post->body, 
+            array('placeholder' => 'Enter your body','class' => 'input_size')) }}
           </div>
 
-          <div class="form_control">
-            {{ Form::label('username', 'Username:') }}
-            {{ Form::text('username', $user->username, 
-            array('placeholder' => 'Enter your username','class' => 'input_size')) }}
-          </div>
 
           <div class="form_control">
-            {{ Form::label('old_password', 'Old password:') }}
-            {{ Form::password('old_password', 
-            array('placeholder' => 'Enter your old password','class' => 'input_size')) }}
-          </div>
-
-          <div class="form_control">
-            {{ Form::label('password', 'Password:') }}
-            {{ Form::password('password', 
-            array('placeholder' => 'Enter your password','class' => 'input_size')) }}
-          </div>
-
-          <div class="form_control">
-            {{ Form::label('confirm_password', 'Confirm Password:') }}
-            {{ Form::password('password_confirmation', 
-            array('placeholder' => 'confirm your password','class' => 'input_size')) }}
-          </div>
-
-          <div class="form_control">
-            {{ Form::submit('Register', 
+            {{ Form::submit('Update Post', 
             array('class' => 'submit_size')) }}
           </div>
-
-
-
-
 
         {{ Form::close() }}
       </div>

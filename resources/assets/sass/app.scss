@@ -16,20 +16,16 @@
 .container { @include container(90%); }
 .cl1 { @include span(40%); }
 
+button {
+  color: $text-color;
+}
+
 .user_card {
   @include span(44%);
   border: 1px gray solid;
   border-radius: 0.5em;
   margin-bottom: 1em;
   padding: 1em;
-
-  button {
-    color: $text-color;
-  }
-
-  .delete_user {
-    display: inline-block;
-  }
 }
 
 .post_card {
@@ -185,6 +181,10 @@ nav {
   width: 9em;
   align: center;
 
+}
+
+.delete_user {
+  display: inline-block;
 }
 
 
