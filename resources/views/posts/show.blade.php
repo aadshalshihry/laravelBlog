@@ -12,6 +12,9 @@
             <div class="post_body">
               {{ $post->body }}
             </div>
+            <p>
+              <h6>By: {{ $user->name }}</h6>
+            </p>
 
             <a href="{{ url()->previous() }}" class="redirect_btn"><button>Back</button></a>
 

@@ -7,7 +7,7 @@
     <hr>
     <div class="container">
 
-    {{ $posts->links() }}
+    {{-- {{ $posts->links() }} --}}
     
     @foreach ($posts as $post)
       <div class="post_card">
@@ -16,13 +16,13 @@
         <div class="post_body">
           {{ $post->body }}
         </div>
-        <br>
-
+        <p>
+          <h6>By: {{ $post->user->name }}</h6>
+        </p>
         
         <a href="{{ route("posts.show", $post->id) }}" class="redirect_btn"><button>Show</button></a>
       </div>
     @endforeach  
     
-
   </div>
 @endsection

@@ -15,8 +15,9 @@
             <div class="post_body">
               {{ $post->body }}
             </div>
-            <br>
-
+            <p>
+              <h6>By: {{ $user->name }}</h6>
+            </p>
             
             <a href="{{ route("posts.show", $post->id) }}" class="redirect_btn"><button>Show</button></a>
             <a href="{{ route("posts.edit", $post->id) }}" class="redirect_btn"><button>Edit</button></a>
