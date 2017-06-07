@@ -7855,4 +7855,13 @@ nav ul li a:hover {
   display: inline-block;
 }
 
+.comment_card {
+  border: 1px gray solid;
+  border-radius: 1em;
+  background: #7fedef;
+  padding: 0.7em;
+  margin-bottom: 0.5em;
+  color: black;
+}
+
 /*# sourceMappingURL=app.css.map */

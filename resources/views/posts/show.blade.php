@@ -15,6 +15,13 @@
             <p>
               <h6>By: {{ $user->name }}</h6>
             </p>
+              @foreach($post->comments as $comment)
+                <div class="comment_card">
+                  <h6>Title: {{ $comment->title }}</h6>
+                  <p>{{ $comment->body }}</p>
+                  <h6>By: {{ $comment->user->name }}</h6>
+                </div>
+              @endforeach
 
             <a href="{{ url()->previous() }}" class="redirect_btn"><button>Back</button></a>
 

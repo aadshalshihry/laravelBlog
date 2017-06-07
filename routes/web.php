@@ -26,6 +26,28 @@ Route::get('api_route', function(){
 Route::resource('users', 'UserController');
 Route::resource('posts', 'PostController');
 
+// Get create page
+Route::get('posts/{post_id}/comments', 'CommentController@create')->name('comment.create');
+
+// Create new comment
+Route::post('posts/{post_id}/comments', 'CommentController@store')->name('comment.store');
+
+// Get show page
+Route::get('posts/{post_id}/comments/{comment_id}', 'CommentController@show')->name('comment.show');
+
+// Get Edit page
+Route::get('posts/{post_id}/comments/{comment_id}', 'CommentController@edit')->name('comment.edit');
+
+// Update comemnt
+Route::put('posts/{post_id}/comments/{comment_id}', 'CommentController@update')->name('comment.update');
+
+// Destroy comment
+Route::delete('posts/{post_id}/comments/{comment_id}', 'CommentController@destroy')->name('comment.destroy');
+
+
+
+
+
 
 Auth::routes();
 

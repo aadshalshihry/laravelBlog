@@ -5,9 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Comment extends Model
 {
-  use Notifiable;
+	use Notifiable;
 
   /**
    * The attributes that are mass assignable.
@@ -15,7 +15,7 @@ class Post extends Model
    * @var array
    */
   protected $fillable = [
-      'title', 'body', 'user_id',
+      'title', 'body', 'user_id', 'post_id'
   ];
 
   /**
@@ -29,11 +29,11 @@ class Post extends Model
 
   public function user()
   {
-      return $this->belongsTo('App\User');
+    return $this->belongsTo('App\User');
   }
 
-  public function comments()
+  public function post()
   {
-      return $this->hasMany('App\Comment');
+  	return $this->belongsTo('App\Post');
   }
 }

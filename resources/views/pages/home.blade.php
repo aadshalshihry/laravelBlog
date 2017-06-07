@@ -18,6 +18,7 @@
         </div>
         <p>
           <h6>By: {{ $post->user->name }}</h6>
+          <h6> {{ count($post->comments) }} Comment(s) </h6>
         </p>
         
         <a href="{{ route("posts.show", $post->id) }}" class="redirect_btn"><button>Show</button></a>

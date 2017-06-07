@@ -32,3 +32,14 @@ $factory->define(App\Post::class, function(Faker\Generator $faker) {
         'user_id' => $faker->randomElement($users)
     ];
 });
+
+$factory->define(App\Comment::class, function(Faker\Generator $faker) {
+    $users = App\User::pluck('id')->toArray();
+    $posts = App\Post::pluck('id')->toArray();
+    return [
+        'title' => $faker->company,
+        'body' => $faker->text,
+        'user_id' => $faker->randomElement($users),
+        'post_id' => $faker->randomElement($posts)
+    ];
+});
