@@ -7,7 +7,7 @@
     <hr>
     <div class="container">
 
-    {{-- {{ $posts->links() }} --}}
+    {{ $posts->links() }}
     
     @foreach ($posts as $post)
       <div class="post_card">
