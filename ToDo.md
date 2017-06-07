@@ -3,5 +3,5 @@ Todo:
   4. Add comment to the project. 
     > create view for each one.
     > make the auth for it.
-    > add except show.
+    > add except show. 
   5. start implement the Api.
