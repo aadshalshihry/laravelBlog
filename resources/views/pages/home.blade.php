@@ -22,6 +22,9 @@
         </p>
         
         <a href="{{ route("posts.show", $post->id) }}" class="redirect_btn"><button>Show</button></a>
+        @if(Auth::user())
+          <a href="{{ route("comment.create", $post->id) }}" class="redirect_btn"><button>Add Comment</button></a>
+        @endif
       </div>
     @endforeach  
     

@@ -20,12 +20,8 @@
                   <h6>Title: {{ $comment->title }}</h6>
                   <p>{{ $comment->body }}</p>
                   <h6>By: {{ $comment->user->name }}</h6>
-                  {{ Form::open(['route' => ['comment.destroy', $comment->post->id, $comment->id]])}}
-                    {{ method_field('DELETE') }}
-                    {{ Form::submit("Delete Comment")}}
-                  {{ Form::close()}}
-                 {{--  <a href="{{ url("posts/" . $comment->post->id . "/comments/$comment->id")}}" class="redirect_btn"><button>Delete Comment!</button> --}}
                 </div>
+                <a href="{{ url("posts/$comment->post->id/comments/$comment->id")}}" class="redirect_btn"><button>Delete Comment</button>
 
               @endforeach
 
@@ -35,7 +31,6 @@
               <a href="{{ route("posts.edit", $post->id) }}" class="redirect_btn"><button>Edit</button></a>
               @component('components.deleteBtn', ['route_name' => 'posts.destroy' ,'user_id' => $post->id])
               @endcomponent
-              <a href="{{ route("comment.create", $post->id) }}" class="redirect_btn"><button>Add Comment</button>
             @endif
           </div>
       </div>

@@ -45,7 +45,7 @@ class PostController extends Controller
         $user = Auth::user();
         $this->validate($request, [
             'title' => 'required|max:255',
-            'body' => 'required||max:255'
+            'body' => 'required|max:255'
         ]);
 
         
