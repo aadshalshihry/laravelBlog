@@ -34,3 +34,7 @@ php artisan migrate --seed
 ```
 php artisan serve
 ```
+* Use bower to install Susy
+```
+bower install
+```
